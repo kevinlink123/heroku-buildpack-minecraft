@@ -5,7 +5,7 @@
     "games",
     "minecraft"
   ],
-  "repository": "https://github.com/jkutner/heroku-buildpack-minecraft",
+  "repository": "https://github.com/kevinlink123/heroku-buildpack-minecraft",
   "env": {
     "MINECRAFT_EULA": {
       "description": "Do you accept the Minecraft EULA?",
@@ -26,6 +26,10 @@
     "AWS_SECRET_KEY": {
       "description": "The AWS secret key for the S3 Bucket",
       "required": false
+    },
+    "MINECRAFT_VERSION": {
+      "description": "The minecraft version to download",
+      "required": true
     }
   },
   "buildpacks": [
