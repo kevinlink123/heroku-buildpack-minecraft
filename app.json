@@ -5,7 +5,7 @@
     "games",
     "minecraft"
   ],
-  "repository": "https://github.com/kevinlink123/heroku-buildpack-minecraft",
+  "repository": "https://github.com/kevinlink123/mc-heroku-server/tree/server-1.14.4",
   "env": {
     "MINECRAFT_EULA": {
       "description": "Do you accept the Minecraft EULA?",
@@ -29,7 +29,7 @@
     },
     "MINECRAFT_VERSION": {
       "description": "The minecraft version to download",
-      "required": true
+      "required": false
     }
   },
   "buildpacks": [
