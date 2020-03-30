@@ -4,7 +4,7 @@ chmod u+x bin/get-vanilla
 chmod u+x bin/test-dir
 chmod u+x bin/sync-to-bucket
 chmod u+x bin/start
-
+pwd
 mc_port=25566
 port=${1:-${PORT:-8080}}
 
@@ -34,9 +34,9 @@ limit=$(ulimit -u)
 heap="1024m"
 
 echo "Server ready to start!"
-# echo "Starting: minecraft ${mc_port}"
-# eval "screen -L -h 2048 -dmS minecraft java -Xmx${heap} -Xms${heap} -jar minecraft.jar nogui"
-# main_pid=$!
+echo "Starting: minecraft ${mc_port}"
+eval "screen -L -h 2048 -dmS minecraft java -Xmx${heap} -Xms${heap} -jar minecraft.jar nogui"
+main_pid=$!
 
 # Flush the logfile every second, and ensure that the logfile exists
 screen -X "logfile 1" && sleep 1
