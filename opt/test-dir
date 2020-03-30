@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [ -d world-vanilla ]; then
+  echo "world-vanilla dir exist"
+else
+  echo "the dir does not exist"
+fi

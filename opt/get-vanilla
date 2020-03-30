@@ -6,12 +6,9 @@ if [ -n "$AWS_BUCKET" ]; then
 access_key = ${AWS_ACCESS_KEY}
 secret_key = ${AWS_SECRET_KEY}
 EOF
-  if [ -d world-vanilla ]; then
-    s3cmd sync world-vanilla/ s3://${AWS_BUCKET}/world/
-  else
-    mkdir -p world-vanilla
+  if
     cd world-vanilla
-    s3cmd get --recursive s3://${AWS_BUCKET}/world/
+    s3cmd get --recursive s3://${AWS_BUCKET}/world-vanilla/
     cd ..
   fi
   rm .s3cfg
