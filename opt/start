@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
+heap="1024m"
+mc_port=25566
+
 echo "Starting..."
+echo "Starting: minecraft ${mc_port}"
 eval "screen -L -h 2048 -dmS minecraft java -Xmx${heap} -Xms${heap} -jar minecraft.jar nogui"
+main_pid=$!
