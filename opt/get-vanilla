@@ -6,7 +6,6 @@ if [ -n "$AWS_BUCKET" ]; then
 access_key = ${AWS_ACCESS_KEY}
 secret_key = ${AWS_SECRET_KEY}
 EOF
-  cd ..
   if [ -d world-vanilla ]; then
     cd world-vanilla
     s3cmd get --recursive s3://${AWS_BUCKET}/world-vanilla/

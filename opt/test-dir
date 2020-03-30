@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-
-cd ..
 if [ -d world-vanilla ]; then
   echo "world-vanilla dir exist"
 else

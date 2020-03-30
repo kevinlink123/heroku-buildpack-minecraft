@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-cd ..
 echo "NDEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH"
 if [ -n "$AWS_BUCKET" ]; then
   cat << EOF > .s3cfg

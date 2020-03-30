@@ -21,8 +21,8 @@ eval "$ngrok_cmd | tee ngrok.log &"
 ngrok_pid=$!
 
 # Do an inline sync first, then start the background job
-# echo "Starting sync..."
-# ./bin/sync
+echo "Starting sync..."
+./bin/sync
 
 # create server config
 echo "server-port=${mc_port}" >> /app/server.properties

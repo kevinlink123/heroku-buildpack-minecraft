@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-cd ..
 if [ -d world-vanilla ]; then
   echo "Starting sync to bucket..."
   s3cmd sync world-vanilla/ s3://${AWS_BUCKET}/world-vanilla/
