@@ -17,10 +17,6 @@ ngrok_pid=$!
 # Do an inline sync first, then start the background job
 echo "Starting sync..."
 opt/sync
-if [ "$READ_ONLY" != "true" ]; then
-  eval "while true; do sleep ${AWS_SYNC_INTERVAL:-300}; bin/sync; done &"
-  sync_pid=$!
-fi
 
 # create server config
 echo "server-port=${mc_port}" >> /app/server.properties
@@ -32,9 +28,10 @@ done
 limit=$(ulimit -u)
 heap="1024m"
 
-echo "Starting: minecraft ${mc_port}"
-eval "screen -L -h 2048 -dmS minecraft java -Xmx${heap} -Xms${heap} -jar minecraft.jar nogui"
-main_pid=$!
+echo "Server ready to start!"
+# echo "Starting: minecraft ${mc_port}"
+# eval "screen -L -h 2048 -dmS minecraft java -Xmx${heap} -Xms${heap} -jar minecraft.jar nogui"
+# main_pid=$!
 
 # Flush the logfile every second, and ensure that the logfile exists
 screen -X "logfile 1" && sleep 1
