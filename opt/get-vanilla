@@ -6,10 +6,13 @@ if [ -n "$AWS_BUCKET" ]; then
 access_key = ${AWS_ACCESS_KEY}
 secret_key = ${AWS_SECRET_KEY}
 EOF
-  if
+  cd ..
+  if [ -d world-vanilla ]
     cd world-vanilla
     s3cmd get --recursive s3://${AWS_BUCKET}/world-vanilla/
     cd ..
+  else
+  echo "the directory does not exist"
   fi
   rm .s3cfg
 fi
