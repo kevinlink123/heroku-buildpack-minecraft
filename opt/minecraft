@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-chmod u+x sync
+chmod u+x bin/sync
 chmod u+x get-vanilla
 chmod u+x test-dir
 chmod u+x sync-to-bucket
@@ -20,7 +20,7 @@ ngrok_pid=$!
 
 # Do an inline sync first, then start the background job
 echo "Starting sync..."
-./sync
+./bin/sync
 
 # create server config
 echo "server-port=${mc_port}" >> /app/server.properties
