@@ -8,11 +8,13 @@ access_key = ${AWS_ACCESS_KEY}
 secret_key = ${AWS_SECRET_KEY}
 EOF
   if [ -d world-vanilla ]; then
-    s3cmd sync world-vanilla/ s3://${AWS_BUCKET}/world/
+  echo "Started sync..."
+    s3cmd sync world-vanilla/ s3://${AWS_BUCKET}/world-vanilla/
   else
+    echo "The directory does not exist. It will be created and get updated with the content inside the s3 bucket"
     mkdir -p world-vanilla
     cd world-vanilla
-    s3cmd get --recursive s3://${AWS_BUCKET}/world/
+    s3cmd get --recursive s3://${AWS_BUCKET}/world-vanilla/
     cd ..
   fi
   rm .s3cfg
