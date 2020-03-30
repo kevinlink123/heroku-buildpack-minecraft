@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
-chmod u+x bin/sync
-chmod u+x bin/get-vanilla
-chmod u+x bin/test-dir
-chmod u+x bin/sync-to-bucket
-chmod u+x bin/start
 pwd
+
+chmod u+x ./opt/sync
+chmod u+x ./opt/get-vanilla
+chmod u+x ./opt/test-dir
+chmod u+x ./opt/sync-to-bucket
+chmod u+x ./opt/start
 mc_port=25566
 port=${1:-${PORT:-8080}}
 
